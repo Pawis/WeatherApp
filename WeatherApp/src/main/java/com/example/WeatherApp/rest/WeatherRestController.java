@@ -5,8 +5,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.example.WeatherApp.model.WeatherDTO;
 
-import reactor.core.publisher.Mono;
-
 
 @RestController
 public class WeatherRestController {

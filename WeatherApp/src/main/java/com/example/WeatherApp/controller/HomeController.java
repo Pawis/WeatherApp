@@ -33,5 +33,14 @@ public class HomeController {
 		
 	}
 	
+	@GetMapping("/chart")
+	public String chartPage(Model model, @RequestParam String city) {
+WeatherDTO weather = weatherService.getCurrentWeather(city);
+		
+		model.addAttribute("weather",weather);
+		
+		return "chart";
+	}
+	
 	
 }

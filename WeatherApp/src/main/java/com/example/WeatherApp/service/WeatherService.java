@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.WeatherApp.model.WeatherDTO;
 import com.example.WeatherApp.rest.WeatherRestController;
-import com.google.gson.JsonObject;
 
 @Service
 public class WeatherService {
