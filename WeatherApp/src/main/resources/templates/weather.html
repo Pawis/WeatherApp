@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -18,7 +18,26 @@
 <body>
 
 
-<div th:text="${weather}">Desc placeholder</div> 
+	<div class="container">
+		<table class="table table-bordered table-striped">
+
+			<thead class="thead-dark">
+				<tr>
+					<th>Temp</th>
+					<th>Pressure</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="weather : ${weather}">
+					<td th:text="${weather.main.temp} " />
+					<td th:text="${weather.main.pressure} " />
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
 
 
 

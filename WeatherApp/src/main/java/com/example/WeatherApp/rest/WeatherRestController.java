@@ -2,12 +2,11 @@ package com.example.WeatherApp.rest;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.util.UriBuilder;
 
 import com.example.WeatherApp.model.WeatherDTO;
-import com.google.gson.JsonObject;
 
 import reactor.core.publisher.Mono;
+
 
 @RestController
 public class WeatherRestController {
@@ -23,7 +22,6 @@ public class WeatherRestController {
 			.build();
 	
 	public WeatherDTO getCurrentWeather(String city) {
-		
 		return client.get()
 		.uri(uriBuilder -> uriBuilder 
 				.path("/weather")
@@ -34,7 +32,6 @@ public class WeatherRestController {
 		.retrieve()
 		.bodyToMono(WeatherDTO.class)
 		.block();
-		
 		
 		
 	}
