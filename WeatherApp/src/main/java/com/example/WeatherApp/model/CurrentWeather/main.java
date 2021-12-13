@@ -1,4 +1,4 @@
-package com.example.WeatherApp.model;
+package com.example.WeatherApp.model.CurrentWeather;
 
 public class main {
 

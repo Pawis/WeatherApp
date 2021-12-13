@@ -1,5 +1,6 @@
 package com.example.WeatherApp.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,40 +8,40 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.WeatherApp.model.WeatherDTO;
+import com.example.WeatherApp.model.CurrentWeather.WeatherDTO;
 import com.example.WeatherApp.service.WeatherService;
+
 
 @Controller
 public class HomeController {
 
 	@Autowired
 	private WeatherService weatherService;
-	
+
 	@RequestMapping("/")
 	public String homePage() {
 		return "index";
 	}
-	
+
 	@GetMapping("/weather")
 	public String getCurrentWeather(Model model, @RequestParam String city) {
-		
+
 		WeatherDTO weather = weatherService.getCurrentWeather(city);
+
 		
-		model.addAttribute("weather",weather);
-		
+		model.addAttribute("weather", weather);
+
 		return "weather";
-		
-		
+
 	}
-	
+/*
 	@GetMapping("/chart")
 	public String chartPage(Model model, @RequestParam String city) {
-WeatherDTO weather = weatherService.getCurrentWeather(city);
-		
-		model.addAttribute("weather",weather);
-		
+		WeatherDTO weather = weatherService.getCurrentWeather(city);
+
+		model.addAttribute("weather", weather);
+
 		return "chart";
 	}
-	
-	
+*/
 }
