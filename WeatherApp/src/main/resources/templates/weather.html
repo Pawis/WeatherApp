@@ -17,6 +17,9 @@
 </head>
 <body>
 
+	<tr th:each="daily: ${daily}">
+    <td th:text="${daily.sunrise}" />
+</tr>
 	<div class="container">
 		<table class="table table-bordered table-striped">
 

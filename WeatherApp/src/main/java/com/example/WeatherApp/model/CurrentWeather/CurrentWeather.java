@@ -2,7 +2,7 @@ package com.example.WeatherApp.model.CurrentWeather;
 
 import java.util.ArrayList;
 
-public class WeatherDTO {
+public class CurrentWeather {
 
 	private main main;
 	private clouds clouds;
@@ -18,7 +18,7 @@ public class WeatherDTO {
 		this.weather = weather;
 	}
 
-	public WeatherDTO() {
+	public CurrentWeather() {
 
 	}
 
