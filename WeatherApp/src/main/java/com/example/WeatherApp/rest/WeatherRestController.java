@@ -52,14 +52,22 @@ public class WeatherRestController {
 	public List<Daily> getDailyWeather() {
 		
 		WebClient webClient = webClientBuilder
-				.baseUrl(dailyWeatherWarsaw)
+				.baseUrl(requestUri)
 				.build();
 		
 		return webClient.get()
+				.uri(uriBuilder -> uriBuilder
+						.path("/onecall")
+						.queryParam("lat", "49.1794")
+						.queryParam("lon", "20.0881")
+						.queryParam("exclude", "minutely")
+						.queryParam("units", "metric")
+						.queryParam("appid", apiKey)
+						.build())
 				.retrieve()
 				.bodyToFlux(DailyWeather.class)
-				.map(s -> s.daily)
-				//.map(DailyWeather::getDaily)
+				//.map(s -> s.daily)
+				.map(DailyWeather::getDaily)
 				.blockLast();
 	}
 	

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DailyWeather {
 
-	public List<Daily> daily;
+	private List<Daily> daily;
 
 	public List<Daily> getDaily() {
 		return daily;

@@ -3,28 +3,26 @@ package com.example.WeatherApp.model.DailyWeather;
 import java.util.List;
 
 public class Daily {
-	
-	public int dt;
-	public int sunrise;
-	public int sunset;
-	public int moonrise;
-	public int moonset;
-	public double moon_phase;
-	public Temp temp;
-	public FeelsLike feels_like;
-	public int pressure;
-	public int humidity;
-	public double dew_point;
-	public double wind_speed;
-	public int wind_deg;
-	public double wind_gust;
-	public List<Weather> weather;
-	public int clouds;
-	public int pop;
-	public double uvi;
 
-	
-	
+	private long dt;
+	private int sunrise;
+	private int sunset;
+	private int moonrise;
+	private int moonset;
+	private double moon_phase;
+	private Temp temp;
+	private FeelsLike feels_like;
+	private int pressure;
+	private int humidity;
+	private double dew_point;
+	private double wind_speed;
+	private int wind_deg;
+	private double wind_gust;
+	private List<Weather> weather;
+	private int clouds;
+	private int pop;
+	private double uvi;
+
 	@Override
 	public String toString() {
 		return "Daily [dt=" + dt + ", sunrise=" + sunrise + ", sunset=" + sunset + ", moonrise=" + moonrise
@@ -34,11 +32,11 @@ public class Daily {
 				+ weather + ", clouds=" + clouds + ", pop=" + pop + ", uvi=" + uvi + "]";
 	}
 
-	public int getDt() {
+	public long getDt() {
 		return dt;
 	}
 
-	public void setDt(int dt) {
+	public void setDt(long dt) {
 		this.dt = dt;
 	}
 

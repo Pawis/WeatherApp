@@ -46,19 +46,27 @@ public class HomeController {
 		List<Daily> dailyWeather =  weatherService.getDailyWeather();
 		
 		System.out.println(dailyWeather);
+		Object [][] a = new Object[][]{
+				{"Airline",     "Price $"},
+			    {"Delta",       100},
+			    {"Southwest",   500},
+			    {"Jet Blue",    300},
+			    {"Canada Air",  300},
+			    {"Average month price", 300}};
 		
 		model.addAttribute("daily", dailyWeather);
+		model.addAttribute("array", a);
 		
 		return "weather";
 	}
-/*
+
 	@GetMapping("/chart")
 	public String chartPage(Model model, @RequestParam String city) {
-		WeatherDTO weather = weatherService.getCurrentWeather(city);
+		List<Daily> weather = weatherService.getDailyWeather();
 
+		
 		model.addAttribute("weather", weather);
 
 		return "chart";
 	}
-*/
 }

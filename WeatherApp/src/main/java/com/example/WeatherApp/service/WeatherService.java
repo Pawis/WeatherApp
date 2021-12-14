@@ -12,5 +12,8 @@ public interface WeatherService {
 	public CurrentWeather getCurrentWeather(String city);
 	
 	public List<Daily> getDailyWeather();
+	
+	public Object[][] getDailyWeatherChart();
+	
 
 }
