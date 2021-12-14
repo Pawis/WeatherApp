@@ -2,6 +2,7 @@ package com.example.WeatherApp.controller;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +45,10 @@ public class HomeController {
 	public String getDailyWeather(Model model) {
 		
 		List<Daily> dailyWeather =  weatherService.getDailyWeather();
-		
+		Object[][] dailyWeatherChart = weatherService.getDailyWeatherChart();
+				
 		System.out.println(dailyWeather);
+		
 		Object [][] a = new Object[][]{
 				{"Airline",     "Price $"},
 			    {"Delta",       100},
@@ -53,9 +56,10 @@ public class HomeController {
 			    {"Jet Blue",    300},
 			    {"Canada Air",  300},
 			    {"Average month price", 300}};
-		
+			    
+		System.out.println(Arrays.deepToString(dailyWeatherChart).replace("], ", "]\n"));
 		model.addAttribute("daily", dailyWeather);
-		model.addAttribute("array", a);
+		model.addAttribute("array", dailyWeatherChart);
 		
 		return "weather";
 	}
