@@ -51,11 +51,14 @@
 
     	  var d = [[${array}]];
   		var data =  google.visualization.arrayToDataTable(d);
-  	
+  	  var options = {
+  	          title: 'Wykres Temperatury na 5 Dni',
+  	          legend: { position: 'bottom' }
+  	        };
 
   	 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-        chart.draw(data);
+        chart.draw(data, options);
       }
     </script>
 </head>
