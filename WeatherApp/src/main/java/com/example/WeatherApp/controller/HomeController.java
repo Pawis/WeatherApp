@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.WeatherApp.model.DailyWeather.Daily;
-import com.example.WeatherApp.service.WeatherService;
+import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
+import com.example.WeatherApp.service.OpenWeatherMapServiceImpl;
 
 
 @Controller
 public class HomeController {
 
 	@Autowired
-	private WeatherService weatherService;
+	private OpenWeatherMapServiceImpl weatherService;
 
 	@RequestMapping("/")
 	public String homePage() {

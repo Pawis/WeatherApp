@@ -8,21 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.WeatherApp.model.CurrentWeather.CurrentWeather;
-import com.example.WeatherApp.model.DailyWeather.Daily;
-import com.example.WeatherApp.rest.WeatherRestController;
+import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
+import com.example.WeatherApp.rest.OpenWeatherMapRestController;
 
 
 @Service
-public class WeatherServiceImpl implements WeatherService{
+public class OpenWeatherMapServiceImpl implements WeatherService{
 
 	@Autowired
-	private WeatherRestController weatherRest;
+	private OpenWeatherMapRestController weatherRest;
 	
-	public CurrentWeather getCurrentWeather(String city) {
-		
-		return weatherRest.getCurrentWeather(city);
-		
-	}
 
 	@Override
 	public List<Daily> getDailyWeather() {

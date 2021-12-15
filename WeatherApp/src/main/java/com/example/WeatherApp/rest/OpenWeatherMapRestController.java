@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.example.WeatherApp.model.CurrentWeather.CurrentWeather;
-import com.example.WeatherApp.model.DailyWeather.Daily;
-import com.example.WeatherApp.model.DailyWeather.DailyWeather;
+import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
+import com.example.WeatherApp.model.openweathermap.DailyWeather.DailyWeather;
 
 
 @RestController
-public class WeatherRestController {
+public class OpenWeatherMapRestController {
 
 	String test = "https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=f8d05f7b1b87f78ef2dd1e67043aeb15";
 	
