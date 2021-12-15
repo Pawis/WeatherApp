@@ -12,7 +12,7 @@ import com.example.WeatherApp.model.weatherbit.DailyWeather.Root;
 @RestController
 public class WeatherbitRestController {
 
-	String requestUri = "http://api.weatherbit.io/v2.0/forecastdaily";
+	String requestUri = "http://api.weatherbit.io/v2.0/forecast";
 	
 	String apiKey = "d382eab11426403d9cc616cff20f1d45";
 
