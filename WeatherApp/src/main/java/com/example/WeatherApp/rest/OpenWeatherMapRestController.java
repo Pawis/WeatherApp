@@ -14,7 +14,6 @@ import com.example.WeatherApp.model.openweathermap.DailyWeather.DailyWeather;
 @RestController
 public class OpenWeatherMapRestController {
 
-	String test = "https://api.openweathermap.org/data/2.5/weather?q=Warsaw&appid=f8d05f7b1b87f78ef2dd1e67043aeb15";
 	
 	String requestUri = "https://api.openweathermap.org/data/2.5";
 	String dailyWeatherWarsaw = "https://api.openweathermap.org/data/2.5/onecall?lat=52.2298&lon=21.0118&exclude=minutely&appid=f8d05f7b1b87f78ef2dd1e67043aeb15";
@@ -25,8 +24,6 @@ public class OpenWeatherMapRestController {
 	private WebClient.Builder webClientBuilder;
 	
 	public CurrentWeather getCurrentWeather(String city) {
-		
-		
 		
 		WebClient webClient = webClientBuilder
 				.baseUrl(requestUri)

@@ -2,18 +2,18 @@ package com.example.WeatherApp.model.openweathermap.DailyWeather;
 
 public class Temp {
 
-	private double day;
+	private int day;
 	private double min;
 	private double max;
 	private double night;
 	private double eve;
 	private double morn;
 
-	public double getDay() {
+	public int getDay() {
 		return day;
 	}
 
-	public void setDay(double day) {
+	public void setDay(int day) {
 		this.day = day;
 	}
 

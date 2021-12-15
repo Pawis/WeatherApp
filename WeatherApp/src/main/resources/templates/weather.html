@@ -66,6 +66,7 @@
 
 	</tr>
 	<div class="container">
+	<h3 style="text-align:center">Temperatura Na Rysach</h3>
 		<table class="table table-bordered table-striped">
 
 			<thead class="thead-dark">
@@ -78,10 +79,10 @@
 
 			<tbody>
 				<tr th:each="weather : ${daily}">
-					<td th:text="${weather.getTemp()} " />
+					<td th:text="${weather.temp.getDay()} " />
 					<td th:text="${weather.getPressure()} " />
 					<td
-						th:text="${#dates.format(weather.getDate() * 1000, 'EEEEE')}" />
+						th:text="${#dates.format(weather.getDt() * 1000, 'EEEEE')}" />
 
 				</tr>
 			</tbody>
