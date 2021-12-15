@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.example.WeatherApp.model.CurrentWeather.CurrentWeather;
 import com.example.WeatherApp.model.DailyWeather.Daily;
-import com.example.WeatherApp.model.DailyWeather.DailyWeather;
 
 
 public interface WeatherService {

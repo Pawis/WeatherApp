@@ -2,7 +2,7 @@ package com.example.WeatherApp.model.CurrentWeather;
 
 public class main {
 
-	private String temp;
+	private int temp;
 	private String feels_like;
 	private String temp_min;
 	private String temp_max;
@@ -19,11 +19,11 @@ public class main {
 				+ ", pressure=" + pressure + ", humidity=" + humidity + "]";
 	}
 
-	public String getTemp() {
+	public int getTemp() {
 		return temp;
 	}
 
-	public void setTemp(String temp) {
+	public void setTemp(int temp) {
 		this.temp = temp;
 	}
 

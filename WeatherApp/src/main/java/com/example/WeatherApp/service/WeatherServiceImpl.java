@@ -1,9 +1,6 @@
 package com.example.WeatherApp.service;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +27,13 @@ public class WeatherServiceImpl implements WeatherService{
 	@Override
 	public List<Daily> getDailyWeather() {
 		
-		return weatherRest.getDailyWeather();
+		List<Daily> dailyWeather = weatherRest.getDailyWeather();
+		
+		for(Daily a : dailyWeather) {
+			a.getTemp().setDay(Math.round(a.getTemp().getDay()));
+		}
+		
+		return dailyWeather;
 	}
 
 	@Override
@@ -38,7 +41,11 @@ public class WeatherServiceImpl implements WeatherService{
 		
 		List<Daily> dailyWeather = weatherRest.getDailyWeather();
 		
-		  SimpleDateFormat formatter = new SimpleDateFormat("EEEEE");  
+		for(Daily a : dailyWeather) {
+			a.getTemp().setDay(Math.round(a.getTemp().getDay()));
+		}
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("EEEEE"); 
 		  
 		Object[][] data = new Object[dailyWeather.size()][2];
 		data[0][0] = "Dzien";

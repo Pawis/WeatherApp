@@ -10,9 +10,6 @@ import com.example.WeatherApp.model.CurrentWeather.CurrentWeather;
 import com.example.WeatherApp.model.DailyWeather.Daily;
 import com.example.WeatherApp.model.DailyWeather.DailyWeather;
 
-import reactor.core.publisher.Flux;
-
-
 
 @RestController
 public class WeatherRestController {
