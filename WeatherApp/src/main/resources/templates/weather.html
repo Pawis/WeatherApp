@@ -57,7 +57,6 @@
   	        };
 
   	 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
         chart.draw(data, options);
       }
     </script>
@@ -67,6 +66,11 @@
 	</tr>
 	<div class="container">
 	<h3 style="text-align:center">Temperatura Na Rysach</h3>
+	<form action="#" th:action="@{/weather}" >
+		<input type="text" th:name="lat"/>
+		<input type="text" th:name="lon"/>
+		<button type="submit" class="btn btn-info col-2">Save</button>
+		</form>
 		<table class="table table-bordered table-striped">
 
 			<thead class="thead-dark">
