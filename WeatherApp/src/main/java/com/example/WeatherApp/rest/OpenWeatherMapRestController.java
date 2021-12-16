@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.example.WeatherApp.model.CurrentWeather.CurrentWeather;
 import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
 import com.example.WeatherApp.model.openweathermap.DailyWeather.DailyWeather;
 
@@ -22,26 +21,6 @@ public class OpenWeatherMapRestController {
 	
 	@Autowired
 	private WebClient.Builder webClientBuilder;
-	
-	public CurrentWeather getCurrentWeather(String city) {
-		
-		WebClient webClient = webClientBuilder
-				.baseUrl(requestUri)
-				.build();
-		
-		return webClient.get()
-		.uri(uriBuilder -> uriBuilder 
-				.path("/weather")
-				.queryParam("q", city)
-				.queryParam("appid", apiKey)
-				.queryParam("units", "metric")
-				.build())
-		.retrieve()
-		.bodyToMono(CurrentWeather.class)
-		.block();
-		
-		
-	}
 	
 	public List<Daily> getDailyWeather() {
 		
