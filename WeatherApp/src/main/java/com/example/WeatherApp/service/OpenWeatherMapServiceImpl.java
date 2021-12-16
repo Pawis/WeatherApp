@@ -1,11 +1,11 @@
 package com.example.WeatherApp.service;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
@@ -13,6 +13,7 @@ import com.example.WeatherApp.model.weatherbit.DailyWeather.Data;
 import com.example.WeatherApp.rest.OpenWeatherMapRestController;
 import com.example.WeatherApp.rest.WeatherbitRestController;
 
+@CacheConfig(cacheNames= {"weather"})
 @Service
 public class OpenWeatherMapServiceImpl implements WeatherService {
 
@@ -27,9 +28,9 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 
 		return  openWeatherMapRest.getDailyWeather();
 
-	
 	}
-
+	
+	@Cacheable
 	@Override
 	public Object[][] getDailyWeatherChart() {
 
