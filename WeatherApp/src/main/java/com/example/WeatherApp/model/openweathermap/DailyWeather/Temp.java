@@ -9,6 +9,7 @@ public class Temp {
 	private double eve;
 	private double morn;
 
+	
 	public int getDay() {
 		return day;
 	}

@@ -82,7 +82,8 @@
 					<td th:text="${weather.temp.getDay()} " />
 					<td th:text="${weather.getPressure()} " />
 					<td
-						th:text="${#dates.format(weather.getDt() * 1000, 'EEEEE')}" />
+						th:text="${weather.getDt()}" />
+						<!--   th:text="${#dates.format(weather.getDt() * 1000, 'EEEEE')}" />  -->
 
 				</tr>
 			</tbody>

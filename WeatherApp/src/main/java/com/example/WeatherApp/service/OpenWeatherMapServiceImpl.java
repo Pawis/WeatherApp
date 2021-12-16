@@ -43,7 +43,8 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 		data[0][1] = "OpenWeatherMap";
 		data[0][2] = "Weatherbit";
 		for (int i = 1; i < 7; i++) {
-			data[i][0] = formatter.format(new Date(openWeatherMap.get(i).getDt() * 1000));
+			//data[i][0] = formatter.format(new Date(openWeatherMap.get(i).getDt() * 1000));
+			data[i][0] = openWeatherMap.get(i).getDt();
 			data[i][1] = openWeatherMap.get(i).getTemp().getDay();
 			data[i][2] = weatherbit.get(i).getTemp();
 		}
