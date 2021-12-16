@@ -13,7 +13,8 @@ import com.example.WeatherApp.model.openweathermap.DailyWeather.DailyWeather;
 @RestController
 public class OpenWeatherMapRestController {
 
-	
+	// "lat", "49.1794"
+	// "lon", "20.0881"
 	String requestUri = "https://api.openweathermap.org/data/2.5";
 	String dailyWeatherWarsaw = "https://api.openweathermap.org/data/2.5/onecall?lat=52.2298&lon=21.0118&exclude=minutely&appid=f8d05f7b1b87f78ef2dd1e67043aeb15";
 
@@ -22,7 +23,7 @@ public class OpenWeatherMapRestController {
 	@Autowired
 	private WebClient.Builder webClientBuilder;
 	
-	public List<Daily> getDailyWeather() {
+	public List<Daily> getDailyWeather(String lat, String lon) {
 		
 		WebClient webClient = webClientBuilder
 				.baseUrl(requestUri)
@@ -31,8 +32,8 @@ public class OpenWeatherMapRestController {
 		return webClient.get()
 				.uri(uriBuilder -> uriBuilder
 						.path("/onecall")
-						.queryParam("lat", "49.1794")
-						.queryParam("lon", "20.0881")
+						.queryParam("lat", lat)
+						.queryParam("lon", lon)
 						.queryParam("exclude", "minutely")
 						.queryParam("units", "metric")
 						.queryParam("appid", apiKey)

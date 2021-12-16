@@ -24,17 +24,17 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 	private WeatherbitRestController weatherbitRest;
 
 	@Override
-	public List<Daily> getDailyWeather() {
+	public List<Daily> getDailyWeather(String lat, String lon) {
 
-		return  openWeatherMapRest.getDailyWeather();
+		return  openWeatherMapRest.getDailyWeather(lat,lon);
 
 	}
 	
 	@Cacheable
 	@Override
-	public Object[][] getDailyWeatherChart() {
+	public Object[][] getDailyWeatherChart(String lat,String lon) {
 
-		List<Daily> openWeatherMap = openWeatherMapRest.getDailyWeather();
+		List<Daily> openWeatherMap = openWeatherMapRest.getDailyWeather(lat, lon);
 		List<Data> weatherbit = weatherbitRest.getDailyWeather();
 
 		SimpleDateFormat formatter = new SimpleDateFormat("EEEEE");
