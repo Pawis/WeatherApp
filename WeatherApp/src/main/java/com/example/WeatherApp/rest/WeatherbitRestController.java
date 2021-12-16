@@ -34,9 +34,9 @@ public class WeatherbitRestController {
 				.queryParam("lon", "20.0881")
 				.build())
 		.retrieve()
-		.bodyToFlux(Root.class)
+		.bodyToMono(Root.class)
 		.map(Root::getData)
-		.blockLast();
+		.block();
 	}
 
 }

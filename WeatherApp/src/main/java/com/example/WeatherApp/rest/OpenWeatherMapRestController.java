@@ -59,10 +59,10 @@ public class OpenWeatherMapRestController {
 						.queryParam("appid", apiKey)
 						.build())
 				.retrieve()
-				.bodyToFlux(DailyWeather.class)
+				.bodyToMono(DailyWeather.class)
 				//.map(s -> s.daily)
 				.map(DailyWeather::getDaily)
-				.blockLast();
+				.block();
 	}
 	
 	
