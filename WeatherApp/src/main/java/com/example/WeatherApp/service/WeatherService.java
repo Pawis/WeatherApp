@@ -7,9 +7,9 @@ import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
 
 public interface WeatherService {
 	
-	public List<Daily> getDailyWeather();
+	public List<Daily> getDailyWeather(String lat,String lon);
 	
-	public Object[][] getDailyWeatherChart();
+	public Object[][] getDailyWeatherChart(String lat,String lon);
 	
 
 }

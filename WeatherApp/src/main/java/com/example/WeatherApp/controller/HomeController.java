@@ -27,10 +27,10 @@ public class HomeController {
 	}
 	
 	@GetMapping("/weather")
-	public String getDailyWeather(Model model) {
+	public String getDailyWeather(Model model, @RequestParam(value = "lat", required = false) String lat, @RequestParam(value = "lon", required = false) String lon) {
 		
-		List<Daily> dailyWeather =  weatherService.getDailyWeather();
-		Object[][] dailyWeatherChart = weatherService.getDailyWeatherChart();
+		List<Daily> dailyWeather =  weatherService.getDailyWeather(lat,lon);
+		Object[][] dailyWeatherChart = weatherService.getDailyWeatherChart(lat,lon);
 				
 		System.out.println(dailyWeather);
 			    
@@ -40,13 +40,5 @@ public class HomeController {
 		
 		return "weather";
 	}
-
-	@GetMapping("/chart")
-	public String chartPage(Model model, @RequestParam String city) {
-		List<Daily> weather = weatherService.getDailyWeather();
-		
-		model.addAttribute("weather", weather);
-
-		return "chart";
-	}
+	
 }

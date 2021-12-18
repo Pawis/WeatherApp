@@ -11,9 +11,33 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-	crossorigin="anonymous">
+	crossorigin="anonymous" >
+	
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin="" />
 
 <title>Insert title here</title>
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""> 
+ </script>
+ <div id ="map" style="width: 1000px; height: 500px"></div>
+ <script >
+	var map = L.map('map').setView([51.505, -0.09], 13);
+
+	var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGF3aXMiLCJhIjoiY2t4YW05d2JiMGcwMTJucDB2cHI0ZTlraiJ9.oYyDZ7w8vPgbiux5VERsbw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(map);
+ </script>
+ 
+ 
 <!--  
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
@@ -57,16 +81,19 @@
   	        };
 
   	 var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
         chart.draw(data, options);
       }
     </script>
 </head>
 <body>
 
-	</tr>
 	<div class="container">
 	<h3 style="text-align:center">Temperatura Na Rysach</h3>
+	<form action="#" th:action="@{/weather}" >
+		<input type="text" th:name="lat"/>
+		<input type="text" th:name="lon"/>
+		<button type="submit" class="btn btn-info col-2">Save</button>
+		</form>
 		<table class="table table-bordered table-striped">
 
 			<thead class="thead-dark">
@@ -89,7 +116,6 @@
 			</tbody>
 		</table>
 		<div id="curve_chart" style="width: 1000px; height: 500px"></div>
-
 	</div>
 
 
