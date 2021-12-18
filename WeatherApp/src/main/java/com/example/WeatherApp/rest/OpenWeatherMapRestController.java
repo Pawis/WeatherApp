@@ -13,15 +13,13 @@ import com.example.WeatherApp.model.openweathermap.DailyWeather.DailyWeather;
 
 
 @RestController
+@PropertySource("ApiKeys.properties")
 public class OpenWeatherMapRestController {
 
 	// "lat", "49.1794"
 	// "lon", "20.0881"
 	String requestUri = "https://api.openweathermap.org/data/2.5";
-	String dailyWeatherWarsaw = "https://api.openweathermap.org/data/2.5/onecall?lat=52.2298&lon=21.0118&exclude=minutely&appid=f8d05f7b1b87f78ef2dd1e67043aeb15";
 
-	String apiKey = "f8d05f7b1b87f78ef2dd1e67043aeb15";
-	
 	@Autowired
 	private Environment env;
 	
@@ -42,7 +40,7 @@ public class OpenWeatherMapRestController {
 						.queryParam("lon", lon)
 						.queryParam("exclude", "minutely")
 						.queryParam("units", "metric")
-						.queryParam("appid", apiKey)
+						.queryParam("appid", env.getProperty("OpenWeatherMapApiKey"))
 						.build())
 				.retrieve()
 				.bodyToMono(DailyWeather.class)
