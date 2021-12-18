@@ -28,6 +28,7 @@ public class OpenWeatherMapRestController {
 	@Autowired
 	private WebClient.Builder webClientBuilder;
 	
+	
 	public List<Daily> getDailyWeather(String lat, String lon) {
 		
 		WebClient webClient = webClientBuilder
