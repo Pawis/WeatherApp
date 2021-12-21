@@ -27,7 +27,8 @@ public class HomeController {
 	}
 	
 	@GetMapping("/weather")
-	public String getDailyWeather(Model model, @RequestParam(value = "lat", required = false) String lat, @RequestParam(value = "lon", required = false) String lon) {
+	public String getDailyWeather(Model model, @RequestParam(value = "lat", required = false, defaultValue = "49.1794") String lat,
+			@RequestParam(value = "lon", required = false, defaultValue = "20.0881") String lon) {
 		
 		List<Daily> dailyWeather =  weatherService.getDailyWeather(lat,lon);
 		Object[][] dailyWeatherChart = weatherService.getDailyWeatherChart(lat,lon);

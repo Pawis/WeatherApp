@@ -1,15 +1,8 @@
 package com.example.WeatherApp.service;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.caffeine.CaffeineCacheManager;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -40,9 +33,9 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 	@Cacheable(value = "weather")
 	@Override
 	public Object[][] getDailyWeatherChart(String lat,String lon) {
-
+		
 		List<Daily> openWeatherMap = openWeatherMapRest.getDailyWeather(lat, lon);
-		List<Data> weatherbit = weatherbitRest.getDailyWeather();
+		List<Data> weatherbit = weatherbitRest.getDailyWeather(lat,lon);
 
 		Object[][] data = new Object[7][3];
 		data[0][0] = "Dzien";

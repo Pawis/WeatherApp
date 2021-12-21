@@ -23,8 +23,9 @@ public class WeatherbitRestController {
 	@Autowired
 	private WebClient.Builder webClientBuilder;
 
-	public List<Data> getDailyWeather() {
-
+	public List<Data> getDailyWeather(String lat, String lon) {
+        // "49.1794"
+		//"20.0881"
 		WebClient webclient = webClientBuilder
 				.baseUrl(requestUri)
 				.build();
@@ -34,8 +35,8 @@ public class WeatherbitRestController {
 				.path("/daily")
 				.queryParam("key", env.getProperty("WeatherbitApiKey"))
 				.queryParam("days", "7")
-				.queryParam("lat", "49.1794")
-				.queryParam("lon", "20.0881")
+				.queryParam("lat", lat)
+				.queryParam("lon", lon)
 				.build())
 		.retrieve()
 		.bodyToMono(Root.class)
