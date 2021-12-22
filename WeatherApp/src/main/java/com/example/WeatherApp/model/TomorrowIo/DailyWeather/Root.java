@@ -1,16 +1,15 @@
 package com.example.WeatherApp.model.TomorrowIo.DailyWeather;
 
-import java.util.List;
 
 public class Root {
 
-	private List<TomorrowioData> data;
+	private data data;
 
-	public List<TomorrowioData> getData() {
+	public data getData() {
 		return data;
 	}
 
-	public void setData(List<TomorrowioData> data) {
+	public void setData(data data) {
 		this.data = data;
 	}
 

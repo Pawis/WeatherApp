@@ -8,6 +8,10 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.Root;
+import com.example.WeatherApp.model.TomorrowIo.DailyWeather.a;
+import com.example.WeatherApp.model.TomorrowIo.DailyWeather.data;
+import com.example.WeatherApp.model.TomorrowIo.DailyWeather.intervals;
+import com.example.WeatherApp.model.TomorrowIo.DailyWeather.timelines;
 import com.example.WeatherApp.model.openweathermap.DailyWeather.OpenWeatherMapData;
 import com.example.WeatherApp.model.weatherbit.DailyWeather.WeatherBitData;
 import com.example.WeatherApp.rest.OpenWeatherMapRestController;
@@ -41,16 +45,18 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 		
 		List<OpenWeatherMapData> openWeatherMap = openWeatherMapRest.getDailyWeather(lat, lon);
 		List<WeatherBitData> weatherbit = weatherbitRest.getDailyWeather(lat,lon);
-		//List<Data> tomorrowIo = tomorrowioRest.getDailyWeather(lat, lon);
+		List<timelines> tomorrowIo = tomorrowioRest.getDailyWeather(lat, lon);
 
-		Object[][] data = new Object[7][3];
+		Object[][] data = new Object[7][4];
 		data[0][0] = "Dzien";
 		data[0][1] = "OpenWeatherMap";
 		data[0][2] = "Weatherbit";
+		data[0][3] = "TomorrowIo";
 		for (int i = 1; i < 7; i++) {
 			data[i][0] = openWeatherMap.get(i).getDt();
 			data[i][1] = openWeatherMap.get(i).getTemp().getDay();
 			data[i][2] = weatherbit.get(i).getTemp();
+			data[i][3] = tomorrowIo.get(0).getIntervals().get(i).getValues().getTemperature();
 		}
 
 		return data;
