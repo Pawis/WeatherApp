@@ -8,8 +8,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.example.WeatherApp.model.TomorrowIo.DailyWeather.Data;
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.Root;
+import com.example.WeatherApp.model.TomorrowIo.DailyWeather.TomorrowioData;
 
 @RestController
 @PropertySource("ApiKeys.properties")
@@ -23,7 +23,7 @@ public class TomorrowIoRestController {
 		@Autowired
 		private Environment env;
 		
-		public List<Data> getDailyWeather(String lat, String lon) {
+		public List<TomorrowioData> getDailyWeather(String lat, String lon) {
 			
 			WebClient webClient = webClientBuilder
 					.baseUrl(requestPath)

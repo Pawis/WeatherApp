@@ -1,6 +1,6 @@
 package com.example.WeatherApp.model.TomorrowIo.DailyWeather;
 
-public class Data {
+public class TomorrowioData {
 	
 	private timelines[] timelines;
 

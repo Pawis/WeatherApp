@@ -4,13 +4,13 @@ import java.util.List;
 
 public class Root {
 
-	private List<Data> data;
+	private List<TomorrowioData> data;
 
-	public List<Data> getData() {
+	public List<TomorrowioData> getData() {
 		return data;
 	}
 
-	public void setData(List<Data> data) {
+	public void setData(List<TomorrowioData> data) {
 		this.data = data;
 	}
 
