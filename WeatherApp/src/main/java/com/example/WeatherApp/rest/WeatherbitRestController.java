@@ -25,7 +25,7 @@ public class WeatherbitRestController {
 
 	public List<Data> getDailyWeather(String lat, String lon) {
         // "49.1794"
-		//"20.0881"
+		// "20.0881"
 		WebClient webclient = webClientBuilder
 				.baseUrl(requestUri)
 				.build();
@@ -43,5 +43,7 @@ public class WeatherbitRestController {
 		.map(Root::getData)
 		.block();
 	}
+	
+	
 
 }
