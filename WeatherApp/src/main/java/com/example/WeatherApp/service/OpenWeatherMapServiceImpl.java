@@ -7,9 +7,11 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import com.example.WeatherApp.model.TomorrowIo.DailyWeather.Root;
 import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
-import com.example.WeatherApp.model.weatherbit.DailyWeather.Data;
+import com.example.WeatherApp.model.weatherbit.DailyWeather.WeatherBitData;
 import com.example.WeatherApp.rest.OpenWeatherMapRestController;
+import com.example.WeatherApp.rest.TomorrowIoRestController;
 import com.example.WeatherApp.rest.WeatherbitRestController;
 
 @CacheConfig(cacheNames= {"weather"})
@@ -21,6 +23,9 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 	
 	@Autowired
 	private WeatherbitRestController weatherbitRest;
+	
+	@Autowired
+	private TomorrowIoRestController tomorrowioRest;
 	
 
 	@Override
@@ -35,7 +40,8 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 	public Object[][] getDailyWeatherChart(String lat,String lon) {
 		
 		List<Daily> openWeatherMap = openWeatherMapRest.getDailyWeather(lat, lon);
-		List<Data> weatherbit = weatherbitRest.getDailyWeather(lat,lon);
+		List<WeatherBitData> weatherbit = weatherbitRest.getDailyWeather(lat,lon);
+		//List<Data> tomorrowIo = tomorrowioRest.getDailyWeather(lat, lon);
 
 		Object[][] data = new Object[7][3];
 		data[0][0] = "Dzien";

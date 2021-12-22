@@ -8,8 +8,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.example.WeatherApp.model.weatherbit.DailyWeather.Data;
 import com.example.WeatherApp.model.weatherbit.DailyWeather.Root;
+import com.example.WeatherApp.model.weatherbit.DailyWeather.WeatherBitData;
 
 @RestController
 @PropertySource("ApiKeys.properties")
@@ -23,7 +23,7 @@ public class WeatherbitRestController {
 	@Autowired
 	private WebClient.Builder webClientBuilder;
 
-	public List<Data> getDailyWeather(String lat, String lon) {
+	public List<WeatherBitData> getDailyWeather(String lat, String lon) {
         // "49.1794"
 		// "20.0881"
 		WebClient webclient = webClientBuilder
@@ -43,7 +43,5 @@ public class WeatherbitRestController {
 		.map(Root::getData)
 		.block();
 	}
-	
-	
 
 }

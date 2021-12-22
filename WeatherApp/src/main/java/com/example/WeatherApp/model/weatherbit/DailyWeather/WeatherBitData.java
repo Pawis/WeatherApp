@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-public class Data {
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+public class WeatherBitData {
 	private String datetime;
 	private int temp;
 
