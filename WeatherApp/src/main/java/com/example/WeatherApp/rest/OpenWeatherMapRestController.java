@@ -8,8 +8,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
 import com.example.WeatherApp.model.openweathermap.DailyWeather.DailyWeather;
+import com.example.WeatherApp.model.openweathermap.DailyWeather.OpenWeatherMapData;
 
 
 @RestController
@@ -27,7 +27,7 @@ public class OpenWeatherMapRestController {
 	private WebClient.Builder webClientBuilder;
 	
 	
-	public List<Daily> getDailyWeather(String lat, String lon) {
+	public List<OpenWeatherMapData> getDailyWeather(String lat, String lon) {
 		
 		WebClient webClient = webClientBuilder
 				.baseUrl(requestUri)

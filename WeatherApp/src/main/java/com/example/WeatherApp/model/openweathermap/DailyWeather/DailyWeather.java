@@ -4,13 +4,13 @@ import java.util.List;
 
 public class DailyWeather {
 
-	private List<Daily> daily;
+	private List<OpenWeatherMapData> daily;
 
-	public List<Daily> getDaily() {
+	public List<OpenWeatherMapData> getDaily() {
 		return daily;
 	}
 
-	public void setDaily(List<Daily> daily) {
+	public void setDaily(List<OpenWeatherMapData> daily) {
 		this.daily = daily;
 	}
 

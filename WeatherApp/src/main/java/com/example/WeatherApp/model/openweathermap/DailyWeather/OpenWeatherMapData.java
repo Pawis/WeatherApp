@@ -5,7 +5,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class Daily {
+public class OpenWeatherMapData {
 
 	private String dt;
 	private Temp temp;

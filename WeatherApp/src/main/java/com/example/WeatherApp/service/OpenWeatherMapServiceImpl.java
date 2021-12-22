@@ -8,7 +8,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.Root;
-import com.example.WeatherApp.model.openweathermap.DailyWeather.Daily;
+import com.example.WeatherApp.model.openweathermap.DailyWeather.OpenWeatherMapData;
 import com.example.WeatherApp.model.weatherbit.DailyWeather.WeatherBitData;
 import com.example.WeatherApp.rest.OpenWeatherMapRestController;
 import com.example.WeatherApp.rest.TomorrowIoRestController;
@@ -29,7 +29,7 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 	
 
 	@Override
-	public List<Daily> getDailyWeather(String lat, String lon) {
+	public List<OpenWeatherMapData> getDailyWeather(String lat, String lon) {
 
 		return  openWeatherMapRest.getDailyWeather(lat,lon);
 
@@ -39,7 +39,7 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 	@Override
 	public Object[][] getDailyWeatherChart(String lat,String lon) {
 		
-		List<Daily> openWeatherMap = openWeatherMapRest.getDailyWeather(lat, lon);
+		List<OpenWeatherMapData> openWeatherMap = openWeatherMapRest.getDailyWeather(lat, lon);
 		List<WeatherBitData> weatherbit = weatherbitRest.getDailyWeather(lat,lon);
 		//List<Data> tomorrowIo = tomorrowioRest.getDailyWeather(lat, lon);
 
