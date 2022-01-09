@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.Root;
-import com.example.WeatherApp.model.TomorrowIo.DailyWeather.a;
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.data;
-import com.example.WeatherApp.model.TomorrowIo.DailyWeather.intervals;
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.timelines;
 
 @RestController

@@ -8,7 +8,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.Root;
-import com.example.WeatherApp.model.TomorrowIo.DailyWeather.a;
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.data;
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.intervals;
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.timelines;
