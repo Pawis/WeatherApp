@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.WeatherApp.model.openweathermap.DailyWeather.OpenWeatherMapData;
-import com.example.WeatherApp.service.OpenWeatherMapServiceImpl;
-
+import com.example.WeatherApp.service.CombinedWeatherService;
 
 @Controller
 public class HomeController {
 
 	@Autowired
-	private OpenWeatherMapServiceImpl weatherService;
+	private CombinedWeatherService weatherService;
 
 	@RequestMapping("/")
 	public String homePage() {

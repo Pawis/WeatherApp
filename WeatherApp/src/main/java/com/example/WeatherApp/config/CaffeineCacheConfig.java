@@ -14,9 +14,9 @@ import com.github.benmanes.caffeine.cache.Caffeine;
 @EnableCaching
 public class CaffeineCacheConfig {
 
-	@Bean
+	@Bean()
 	public CacheManager cacheManager() {
-		CaffeineCacheManager cacheManager = new CaffeineCacheManager("weather");
+		CaffeineCacheManager cacheManager = new CaffeineCacheManager();
 		cacheManager.setCaffeine(caffeineCacheBuilder());
 		return cacheManager;
 	}

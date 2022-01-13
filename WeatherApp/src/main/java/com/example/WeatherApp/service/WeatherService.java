@@ -11,5 +11,4 @@ public interface WeatherService {
 	
 	public Object[][] getDailyWeatherChart(String lat,String lon);
 	
-
 }

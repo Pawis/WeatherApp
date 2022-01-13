@@ -19,7 +19,7 @@ import com.example.WeatherApp.rest.WeatherbitRestController;
 
 @CacheConfig(cacheNames= {"weather"})
 @Service
-public class OpenWeatherMapServiceImpl implements WeatherService {
+public class CombinedWeatherService implements WeatherService {
 
 	@Autowired
 	private OpenWeatherMapRestController openWeatherMapRest;
@@ -32,6 +32,7 @@ public class OpenWeatherMapServiceImpl implements WeatherService {
 	
 
 	@Override
+	@Cacheable(value = "a")
 	public List<OpenWeatherMapData> getDailyWeather(String lat, String lon) {
 
 		return  openWeatherMapRest.getDailyWeather(lat,lon);
