@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 
 import com.example.WeatherApp.model.openweathermap.DailyWeather.OpenWeatherMapData;
-import com.example.WeatherApp.rest.OpenWeatherMapRestController;
+import com.example.WeatherApp.service.providers.OpenWeatherMapRestController;
 
 public class OpenWeatherMapService implements WeatherService {
 

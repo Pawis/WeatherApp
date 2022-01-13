@@ -13,9 +13,9 @@ import com.example.WeatherApp.model.TomorrowIo.DailyWeather.intervals;
 import com.example.WeatherApp.model.TomorrowIo.DailyWeather.timelines;
 import com.example.WeatherApp.model.openweathermap.DailyWeather.OpenWeatherMapData;
 import com.example.WeatherApp.model.weatherbit.DailyWeather.WeatherBitData;
-import com.example.WeatherApp.rest.OpenWeatherMapRestController;
-import com.example.WeatherApp.rest.TomorrowIoRestController;
-import com.example.WeatherApp.rest.WeatherbitRestController;
+import com.example.WeatherApp.service.providers.OpenWeatherMapRestController;
+import com.example.WeatherApp.service.providers.TomorrowIoRestController;
+import com.example.WeatherApp.service.providers.WeatherbitRestController;
 
 @CacheConfig(cacheNames= {"weather"})
 @Service

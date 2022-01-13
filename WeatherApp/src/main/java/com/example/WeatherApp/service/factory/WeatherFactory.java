@@ -1,4 +1,8 @@
-package com.example.WeatherApp.service;
+package com.example.WeatherApp.service.factory;
+
+import com.example.WeatherApp.service.CombinedWeatherService;
+import com.example.WeatherApp.service.OpenWeatherMapService;
+import com.example.WeatherApp.service.WeatherService;
 
 public class WeatherFactory {
 	

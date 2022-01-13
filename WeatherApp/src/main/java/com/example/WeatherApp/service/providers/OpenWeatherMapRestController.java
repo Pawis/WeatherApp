@@ -1,4 +1,4 @@
-package com.example.WeatherApp.rest;
+package com.example.WeatherApp.service.providers;
 
 import java.util.List;
 
